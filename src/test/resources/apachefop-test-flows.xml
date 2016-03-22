@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:xslfo-to-afp="http://www.mulesoft.org/schema/mule/xslfo-to-afp"
+	xmlns:xslfo-to-awt="http://www.mulesoft.org/schema/mule/xslfo-to-awt" 
+	xmlns:xslfo-to-rtf="http://www.mulesoft.org/schema/mule/xslfo-to-rtf"
+	xmlns:xslfo-to-txt="http://www.mulesoft.org/schema/mule/xslfo-to-txt" 
+	xmlns:xslfo-to-pdf="http://www.mulesoft.org/schema/mule/xslfo-to-pdf"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+		http://www.mulesoft.org/schema/mule/xslfo-to-pdf http://www.mulesoft.org/schema/mule/xslfo-to-pdf/current/mule-xslfo-to-pdf.xsd
+		http://www.mulesoft.org/schema/mule/xslfo-to-txt http://www.mulesoft.org/schema/mule/xslfo-to-txt/current/mule-xslfo-to-txt.xsd
+		http://www.mulesoft.org/schema/mule/xslfo-to-rtf http://www.mulesoft.org/schema/mule/xslfo-to-rtf/current/mule-xslfo-to-rtf.xsd
+		http://www.mulesoft.org/schema/mule/xslfo-to-awt http://www.mulesoft.org/schema/mule/xslfo-to-awt/current/mule-xslfo-to-awt.xsd
+		http://www.mulesoft.org/schema/mule/xslfo-to-afp http://www.mulesoft.org/schema/mule/xslfo-to-afp/current/mule-xslfo-to-afp.xsd" >
+    
+    <flow name="apachefop-test-pdfFlow">
+        <vm:inbound-endpoint exchange-pattern="request-response" path="test.xslfo.pdf.in" doc:name="VM"/>
+        <logger message="Message came in... #[payload]" level="INFO" doc:name="Logger"/>
+        <xslfo-to-pdf:xslfo-to-pdf doc:name="XSL-FO To PDF"/>
+        <logger message="Message after conversion : #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    
+    <flow name="apachefop-test-txtFlow">
+        <vm:inbound-endpoint exchange-pattern="request-response" path="test.xslfo.txt.in" doc:name="VM"/>
+        <logger message="Message came in... #[payload]" level="INFO" doc:name="Logger"/>
+        <xslfo-to-txt:xslfo-to-text doc:name="XSL-FO To TEXT"/>
+        <logger message="Message after conversion : #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    
+    <flow name="apachefop-test-rtfFlow">
+        <vm:inbound-endpoint exchange-pattern="request-response" path="test.xslfo.rtf.in" doc:name="VM"/>
+        <logger message="Message came in... #[payload]" level="INFO" doc:name="Logger"/>
+        <xslfo-to-rtf:xslfo-to-rtf doc:name="XSL-FO To RTF"/>
+        <logger message="Message after conversion : #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    
+    <flow name="apachefop-test-awtFlow">
+        <vm:inbound-endpoint exchange-pattern="request-response" path="test.xslfo.awt.in" doc:name="VM"/>
+        <logger message="Message came in... #[payload]" level="INFO" doc:name="Logger"/>
+        <xslfo-to-awt:xslfo-to-awt doc:name="XSL-FO To AWT"/>
+        <logger message="Message after conversion : #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    
+    <flow name="apachefop-test-afpFlow">
+        <vm:inbound-endpoint exchange-pattern="request-response" path="test.xslfo.afp.in" doc:name="VM"/>
+        <logger message="Message came in... #[payload]" level="INFO" doc:name="Logger"/>
+        <xslfo-to-afp:xslfo-to-afp doc:name="XSL-FO To AFP"/>
+        <logger message="Message after conversion : #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

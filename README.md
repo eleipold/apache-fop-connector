@@ -4,8 +4,8 @@
 
 # Mule supported versions
 Examples:
-Mule 3.4.x, 3.5.x
-Mule 3.4.1
+Mule 3.7.x, 3.7.x
+Mule 3.7.1
 
 # [Destination service or application name] supported versions
 Example:
