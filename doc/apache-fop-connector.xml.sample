@@ -1,3 +1,19 @@
-<!-- BEGIN_INCLUDE(apache-fop:greet) -->
-    <apache-fop:greet config-ref="" friend="#[map-payload:friend]" />
-<!-- END_INCLUDE(apache-fop:greet) -->
+<!-- BEGIN_INCLUDE(xslfo-to-pdf:xslfo-to-pdf) -->
+   <xslfo-to-pdf:xslfo-to-pdf doc:name="XSL-FO To PDF"/>
+<!-- END_INCLUDE(xslfo-to-pdf:xslfo-to-pdf) -->
+
+<!-- BEGIN_INCLUDE(xslfo-to-txt:xslfo-to-text) -->
+   <xslfo-to-txt:xslfo-to-text doc:name="XSL-FO To TXT"/>
+<!-- END_INCLUDE(xslfo-to-txt:xslfo-to-text) -->
+
+<!-- BEGIN_INCLUDE(xslfo-to-rtf:xslfo-to-rtf) -->
+   <xslfo-to-rtf:xslfo-to-rtf doc:name="XSL-FO To RTF"/>
+<!-- END_INCLUDE(xslfo-to-rtf:xslfo-to-rtf) -->
+
+<!-- BEGIN_INCLUDE(xslfo-to-awt:xslfo-to-awt) -->
+   <xslfo-to-awt:xslfo-to-awt doc:name="XSL-FO To AWT"/>
+<!-- END_INCLUDE(xslfo-to-awt:xslfo-to-awt) -->
+
+<!-- BEGIN_INCLUDE(xslfo-to-afp:xslfo-to-afp) -->
+   <xslfo-to-afp:xslfo-to-afp doc:name="XSL-FO To AFP"/>
+<!-- END_INCLUDE(xslfo-to-afp:xslfo-to-afp) -->
